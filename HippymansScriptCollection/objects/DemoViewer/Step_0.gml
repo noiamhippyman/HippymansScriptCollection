@@ -1,6 +1,6 @@
 imguigml_push_style_var(EImGui_StyleVar.WindowRounding,0);
 
-var offset = 100;
+var offset = display_get_dpi_x() * 1.5;
 demo_viewer_gui_sidebar(offset);
 demo_viewer_gui_demo_window(offset);
 
