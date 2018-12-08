@@ -10,7 +10,7 @@ if (timer[@enTimer.Time] <= 0) {
 	//Stop timer if auto timer is disabled
     if (!timer_get_auto_reset(timer)) {
 		timer_stop(timer);
-		timer_reset(timer);
+		__timer_reset(timer);
 	} else {
 		//If timer is set to auto-reset, add timeset instead of assigning it
 		timer[@enTimer.Time] += timer[@enTimer.TimeSet];

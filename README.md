@@ -4,6 +4,8 @@ ___
 ___
 - Arrays 
 - Array Maps
+- External Audio
+- GMSFXR (GML port of SFXR)
 - Timers
 ___
 

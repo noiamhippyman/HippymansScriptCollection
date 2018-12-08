@@ -7,7 +7,8 @@
         "6636c0a5-2a47-47df-bd6c-16d8bdbfa00b",
         "aad78988-5988-4f5d-b2fe-8740f4c85a66",
         "0b2b2bc4-ab7c-4878-9443-75cb90032648",
-        "50b619ff-7864-4f2b-8a1e-ccd5e3da13db"
+        "50b619ff-7864-4f2b-8a1e-ccd5e3da13db",
+        "4db35a1f-43e9-48e2-abe0-850fedfa03a7"
     ],
     "filterType": "GMScript",
     "folderName": "Demos",

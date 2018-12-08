@@ -1,0 +1,3 @@
+enum enExtAudio {
+	WaveBuffer,AudioBuffer
+}

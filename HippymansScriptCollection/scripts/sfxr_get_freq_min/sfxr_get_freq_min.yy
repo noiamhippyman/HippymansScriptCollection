@@ -1,8 +1,8 @@
 {
-    "id": "9ad76362-ef5d-490e-b839-d612b26f5677",
+    "id": "94b361f4-d087-442e-9049-4f8e0323b4b6",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "timer_reset",
+    "name": "sfxr_get_freq_min",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -2,4 +2,4 @@
 /// @args id
 var timer = argument0;
 timer[@enTimer.Running] = false;
-timer_reset(timer);
+__timer_reset(timer);

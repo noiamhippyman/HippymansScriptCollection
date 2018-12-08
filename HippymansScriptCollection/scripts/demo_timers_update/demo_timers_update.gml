@@ -32,11 +32,11 @@ imguigml_separator();
 
 imguigml_text_wrapped("timer_create(time,autoreset,script,[args] - Creates a timer.");
 imguigml_text_wrapped("timer_update(id) - Updates a timer.");
-imguigml_text_wrapped("timer_reset(id) - Resets a timer.");
 imguigml_text_wrapped("timer_play(id) - Starts/Unpauses a timer.");
 imguigml_text_wrapped("timer_stop(id) - Stops a timer.");
 imguigml_text_wrapped("timer_pause(id) - Pauses a timer.");
 imguigml_text_wrapped("timer_toggle(id) - Toggles a timer.");
+imguigml_text_wrapped("timer_is_running(id) - Returns true if timer is running, otherwise it returns false.");
 
 imguigml_separator();
 
@@ -47,7 +47,7 @@ imguigml_separator();
 var timerList = demoDataMap[?"timer list"];
 var timerCount = ds_list_size(timerList);
 
-var buttonCount = 5;
+var buttonCount = 6;
 var buttonW = (demoDataMap[?"window width"]/buttonCount)-4;
 
 for (var i = 0; i < timerCount; ++i) {
@@ -86,6 +86,10 @@ for (var i = 0; i < timerCount; ++i) {
 		ds_list_delete(timerList,i);
 		imguigml_pop_style_var(1);
 		break;
+	}
+	imguigml_same_line();
+	if (imguigml_button("Is Running?##timer"+string(i), buttonW)) {
+		show_message("Timer running: " + (timer_is_running(timer) ? "true" : "false"));
 	}
 	
 	imguigml_pop_style_var(1);
