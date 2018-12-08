@@ -4,6 +4,7 @@ ___
 ___
 - Arrays 
 - Array Maps
+- Timers
 ___
 
 Using ImGuiGML for demo GUI. https://marketplace.yoyogames.com/assets/6221/imguigml
