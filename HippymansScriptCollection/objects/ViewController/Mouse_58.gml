@@ -1,0 +1,1 @@
+isPanning = false;

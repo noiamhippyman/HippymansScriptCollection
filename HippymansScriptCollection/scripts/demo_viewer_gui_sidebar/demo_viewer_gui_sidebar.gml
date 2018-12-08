@@ -2,9 +2,9 @@
 /// @args width
 var width = argument0;
 
-var flags = EImGui_WindowFlags.NoTitleBar |
-			EImGui_WindowFlags.NoResize | 
-			EImGui_WindowFlags.NoMove;
+var flags = EImGui_WindowFlags.NoResize | 
+			EImGui_WindowFlags.NoMove |
+			EImGui_WindowFlags.NoCollapse;
 
 var size = [width,window_get_height()];
 imguigml_set_next_window_pos(0,0);

@@ -431,6 +431,14 @@
             }
         },
         {
+            "Key": "907ef5a2-856c-430a-9eab-388044ef9555",
+            "Value": {
+                "id": "b5b584d5-f10d-4a20-9646-bcce7503fd94",
+                "resourcePath": "views\\907ef5a2-856c-430a-9eab-388044ef9555.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "91c3d23b-86c3-4b35-96c7-7fbbcc76cab3",
             "Value": {
                 "id": "b8991a96-6704-4ac2-bb6a-beee41aba1c8",
@@ -644,6 +652,14 @@
                 "id": "44cc9d27-d665-4647-86b8-c1e2b4bbd690",
                 "resourcePath": "views\\e7f6dd2c-17d3-4302-a1f5-02480520f51b.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "eadbccb4-5f41-4d99-92e6-73de96ac65ce",
+            "Value": {
+                "id": "80c5954c-f86b-42f2-a83b-795e2c3e7525",
+                "resourcePath": "objects\\ViewController\\ViewController.yy",
+                "resourceType": "GMObject"
             }
         },
         {

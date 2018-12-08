@@ -1,4 +1,5 @@
 instance_create_layer(0,0,"Instances",imgui);
+instance_create_layer(0,0,"Instances",ViewController);
 
 demoDataMap = ds_map_create();
 
