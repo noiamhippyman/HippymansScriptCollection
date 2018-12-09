@@ -1,3 +1,20 @@
+#region Notes
+if (imguigml_tree_node("Notes##arrays")) {
+imguigml_separator();
+
+imguigml_text_wrapped("Extra scripts that make working with arrays easier.");
+
+imguigml_separator();
+
+imguigml_text_wrapped("array_append(id,value) - Places a value at the end of an array.");
+imguigml_text_wrapped("array_insert(id,index,value) - Insert a value at 'index' into an array.");
+imguigml_text_wrapped("array_delete(id,index) - Returns a new array with entry at 'index' removed"); 
+
+}
+
+imguigml_separator();
+#endregion
+
 #region Demo Properties
 
 var ret = imguigml_input_int("Index",demoDataMap[?"index"],1,1);
@@ -34,19 +51,6 @@ if (imguigml_button("Delete", buttonW, buttonH)) {
 }
 
 imguigml_pop_style_var(1);
-
-#endregion
-
-#region Notes
-imguigml_separator();
-
-imguigml_text_wrapped("Extra scripts that make working with arrays easier.");
-
-imguigml_separator();
-
-imguigml_text_wrapped("array_append(id,value) - Places a value at the end of an array.");
-imguigml_text_wrapped("array_insert(id,index,value) - Insert a value at 'index' into an array.");
-imguigml_text_wrapped("array_delete(id,index) - Returns a new array with entry at 'index' removed"); 
 imguigml_separator();
 #endregion
 

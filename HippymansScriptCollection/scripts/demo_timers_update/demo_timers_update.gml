@@ -1,3 +1,25 @@
+#region Notes
+if (imguigml_tree_node("Notes##timers")) {
+imguigml_separator();
+
+imguigml_text_wrapped("Timers that are timed with delta timing.");
+
+imguigml_separator();
+
+imguigml_text_wrapped("timer_create(time,autoreset,script,[args] - Creates a timer.");
+imguigml_text_wrapped("timer_update(id) - Updates a timer.");
+imguigml_text_wrapped("timer_play(id) - Starts/Unpauses a timer.");
+imguigml_text_wrapped("timer_stop(id) - Stops a timer.");
+imguigml_text_wrapped("timer_pause(id) - Pauses a timer.");
+imguigml_text_wrapped("timer_toggle(id) - Toggles a timer.");
+imguigml_text_wrapped("timer_is_running(id) - Returns true if timer is running, otherwise it returns false.");
+
+}
+
+imguigml_separator();
+
+#endregion
+
 #region Demo Properties
 
 var ret = imguigml_drag_int("Seconds##timer",demoDataMap[?"time"],1,1,600);
@@ -20,26 +42,7 @@ if (imguigml_button("Create##timer",paramSize[0]-boxSize[0])) {
 	
 	ds_list_add(demoDataMap[?"timer list"],timer_create(time,auto,scr));
 }
-
-#endregion
-
-#region Notes
 imguigml_separator();
-
-imguigml_text_wrapped("Timers that are timed with delta timing.");
-
-imguigml_separator();
-
-imguigml_text_wrapped("timer_create(time,autoreset,script,[args] - Creates a timer.");
-imguigml_text_wrapped("timer_update(id) - Updates a timer.");
-imguigml_text_wrapped("timer_play(id) - Starts/Unpauses a timer.");
-imguigml_text_wrapped("timer_stop(id) - Stops a timer.");
-imguigml_text_wrapped("timer_pause(id) - Pauses a timer.");
-imguigml_text_wrapped("timer_toggle(id) - Toggles a timer.");
-imguigml_text_wrapped("timer_is_running(id) - Returns true if timer is running, otherwise it returns false.");
-
-imguigml_separator();
-
 #endregion
 
 #region Demo Functions and Display

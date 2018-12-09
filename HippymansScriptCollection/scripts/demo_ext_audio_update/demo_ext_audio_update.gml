@@ -1,5 +1,22 @@
+#region Notes
+if (imguigml_tree_node("Notes##extaudio")) {
+imguigml_separator();
+imguigml_text_wrapped("Load external WAVE audio files at runtime. Get the audio buffer ID and use that with all of GameMaker's built-in audio functions.");
+imguigml_separator();
+imguigml_text_wrapped("ext_audio_load(filename) - Returns an external audio instance containing the data and audio buffers.");
+imguigml_text_wrapped("ext_audio_free(id) - Frees an external audio instance from memory.");
+imguigml_text_wrapped("ext_audio_id(id) - Returns the audio buffer id from an external audio instance.");
+}
+imguigml_separator();
+
+#endregion
+
+#region Demo Properties
+
 var ret = imguigml_input_text("File Path##extaudio",demoDataMap[?"filepath"],500);
 if (ret[0]) demoDataMap[?"filepath"] = ret[1];
+
+
 
 imguigml_same_line();
 
@@ -16,41 +33,24 @@ if (imguigml_button("Load##extaudio")) {
 		ds_list_add(demoDataMap[?"audio list"], ext_audio_load(path));
 	}
 }
-
 imguigml_separator();
+#endregion
+
+#region Demo Display and Functions
 
 var audioList = demoDataMap[?"audio list"];
 var audioCount = ds_list_size(audioList);
 for (var i = 0; i < audioCount; ++i) {
 	var audio = audioList[|i];
 	var audioID = ext_audio_id(audio);
-	imguigml_text("External Audio " + string(i));
-	
-	ret = imguigml_slider_float("Volume##extaudio"+string(i),audio_sound_get_gain(audioID),0,1);
-	if (ret[0]) audio_sound_gain(audioID,ret[1],0);
-	
-	if (imguigml_button("Play##extaudio"+string(i))) {
-		if (!audio_is_paused(audioID) && audio_is_playing(audioID)) audio_stop_sound(audioID);
-		if (audio_is_paused(audioID)) {
-			audio_resume_sound(audioID);
-		} else {
-			audio_play_sound(audioID,10,false);
-		}
-	} 
-	
+	demo_viewer_audio_display("External Audio","extaudio",i,audioID);
 	imguigml_same_line();
-	
-	if (imguigml_button("Stop##extaudio"+string(i))) {
+	if (imguigml_button("Delete##extaudio"+string(i))) {
 		audio_stop_sound(audioID);
-	} 
-	
-	imguigml_same_line();
-	
-	if (imguigml_button("Pause##extaudio"+string(i))) {
-		if (audio_is_paused(audioID)) {
-			audio_resume_sound(audioID);
-		} else {
-			audio_pause_sound(audioID);
-		}
+		ext_audio_free(audio);
+		ds_list_delete(audioList,i);
+		break;
 	}
 }
+
+#endregion

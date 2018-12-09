@@ -4,7 +4,8 @@ var width = argument0;
 
 var flags = EImGui_WindowFlags.NoResize | 
 			EImGui_WindowFlags.NoMove |
-			EImGui_WindowFlags.NoCollapse;
+			EImGui_WindowFlags.NoCollapse |
+			EImGui_WindowFlags.NoScrollbar;
 
 var demo = ds_map_find_value(demoMap,demoActiveKey);
 if (!is_undefined(demo)) {

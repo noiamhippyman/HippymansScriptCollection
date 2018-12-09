@@ -1,5 +1,49 @@
 var sfxr = demoDataMap[?"sfxr"];
 
+#region Notes
+if (imguigml_tree_node("Notes##sfxr")) {
+imguigml_separator();
+imguigml_text_wrapped("This is all the functionality of the popular SFXR tool ported to GML.");
+imguigml_separator();
+imguigml_text("Usage Instructions");
+
+imguigml_columns(2);
+imguigml_separator();
+
+imguigml_text("sfxr = sfxr_init();");
+imguigml_text("sfxr_preset_lasershoot(sfxr);");
+imguigml_text("bufferID = sfxr_create_buffer(sfxr);");
+imguigml_text("soundID = sfxr_create_audio(sfxr,bufferID);");
+imguigml_text("audio_play_sound(soundID);");
+imguigml_text("sfxr_free_audio(sfxr,soundID);");
+imguigml_text("sfxr_free_buffer(sfxr,bufferID);");
+
+imguigml_next_column();
+
+imguigml_text("1) Initialize SFXR");
+imguigml_text("2) Set parameters to desired values.");
+imguigml_text("3) Create a buffer with the current parameters.");
+imguigml_text("4) Create an audio buffer. This is the actual sound.");
+imguigml_text("5) Play the sound.");
+imguigml_text("6) Free the audio from memory when you don't need it.");
+imguigml_text("7) Free the original buffer from memory.");
+
+
+imguigml_columns(1);
+imguigml_separator();
+imguigml_text_wrapped("sfxr_init() - Generates a ds_map with the sfxr engine data needed to generated sound effects.");
+imguigml_text_wrapped("sfxr_free(id) - Frees up the sfxr engine data map from memory.");
+imguigml_text_wrapped("sfxr_reset(id) - Resets all sfxr engine variables back to default settings.");
+imguigml_text_wrapped("sfxr_create_buffer(id) - Returns a buffer filled with the generated sfx data.");
+imguigml_text_wrapped("sfxr_create_audio(id,buffer) - Returns an audio buffer generated from the buffer given.");
+imguigml_text_wrapped("sfxr_free_buffer(id) - Frees sfx buffer data from memory.");
+imguigml_text_wrapped("sfxr_free_audio(id,buffer) - Frees sfx audio buffer from memory.");
+
+}
+
+imguigml_separator();
+#endregion
+
 #region Demo Properties
 
 imguigml_begin_child("Properties##sfxr-properties",0,demoDataMap[?"window height"] * 0.5,true);
@@ -131,10 +175,72 @@ imguigml_end_child();
 #endregion
 
 #region Demo Functions
-#endregion
 
-#region Notes
+var buttonCount = 10;
+var buttonW = (demoDataMap[?"window width"] - 4 * buttonCount) /buttonCount
+var buttonH = 20;
+
+imguigml_push_style_var(EImGui_StyleVar.ItemSpacing,4,4);
+
+if (imguigml_button("Generate##sfxr",demoDataMap[?"window width"]-4,buttonH)) {
+	var buffer = sfxr_create_buffer(sfxr);
+	var audioID = sfxr_create_audio(sfxr,buffer);
+	var settingsMap = sfxr_save_settings(sfxr);
+	
+	var sfx = [buffer,audioID,settingsMap];
+	ds_list_add(demoDataMap[?"sfx list"],sfx);
+}
+if (imguigml_button("Pickup",buttonW,buttonH)) sfxr_preset_coinpickup(sfxr);
+imguigml_same_line();
+if (imguigml_button("Shoot",buttonW,buttonH)) sfxr_preset_lasershoot(sfxr);
+imguigml_same_line();
+if (imguigml_button("Boom",buttonW,buttonH)) sfxr_preset_explosion(sfxr);
+imguigml_same_line();
+if (imguigml_button("Powerup",buttonW,buttonH)) sfxr_preset_powerup(sfxr);
+imguigml_same_line();
+if (imguigml_button("Hit",buttonW,buttonH)) sfxr_preset_hithurt(sfxr);
+imguigml_same_line();
+if (imguigml_button("Jump",buttonW,buttonH)) sfxr_preset_jump(sfxr);
+imguigml_same_line();
+if (imguigml_button("Blip",buttonW,buttonH)) sfxr_preset_blipselect(sfxr);
+imguigml_same_line();
+if (imguigml_button("Mutate",buttonW,buttonH)) sfxr_preset_mutate(sfxr);
+imguigml_same_line();
+if (imguigml_button("Random",buttonW,buttonH)) sfxr_preset_randomize(sfxr);
+imguigml_same_line();
+if (imguigml_button("Reset",buttonW,buttonH)) sfxr_reset(sfxr);
+
+imguigml_pop_style_var(1);
+imguigml_separator();
 #endregion
 
 #region Demo Display
+
+var sfxList = demoDataMap[?"sfx list"];
+var sfxCount = ds_list_size(sfxList);
+for (var i = 0; i < sfxCount; ++i) {
+	var sfx = sfxList[|i];
+	
+	var audioID = sfx[1];
+	
+	demo_viewer_audio_display("SFX","sfxr-audio",i,audioID);
+	
+	imguigml_same_line(); 
+	
+	if (imguigml_button("Copy##sfxr-audio"+string(i))) {
+		sfxr_load_settings(sfxr,sfx[2]);
+	}
+	
+	imguigml_same_line(); 
+	
+	if (imguigml_button("Delete##sfxr-audio"+string(i))) {
+		audio_stop_sound(audioID);
+		ds_map_destroy(sfx[2]);
+		sfxr_free_audio(sfx[1]);
+		sfxr_free_buffer(sfx[0]);
+		ds_list_delete(sfxList,i);
+		break;
+	}
+}
+
 #endregion

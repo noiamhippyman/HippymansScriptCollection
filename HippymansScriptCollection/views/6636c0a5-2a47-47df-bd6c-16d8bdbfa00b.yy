@@ -6,7 +6,8 @@
     "children": [
         "3be63cff-c1d2-4a40-abf8-30ccb246bd52",
         "fbbc684b-cb9d-4b13-bcde-cf028f82d503",
-        "2eb77235-103f-4a8b-9b19-8b560fb7f1b2"
+        "2eb77235-103f-4a8b-9b19-8b560fb7f1b2",
+        "8b27730d-b362-4798-b6a3-c73b159b9cce"
     ],
     "filterType": "GMScript",
     "folderName": "DemoViewer",

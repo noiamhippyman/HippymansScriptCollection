@@ -255,14 +255,6 @@
             }
         },
         {
-            "Key": "215999c2-87ac-4064-b6eb-35eb0f1e5324",
-            "Value": {
-                "id": "475d2193-af35-46ca-a6be-6b71f0828e21",
-                "resourcePath": "views\\215999c2-87ac-4064-b6eb-35eb0f1e5324.yy",
-                "resourceType": "GMFolder"
-            }
-        },
-        {
             "Key": "2318ce28-dc6b-4228-9968-14187f555492",
             "Value": {
                 "id": "14c9c687-b36e-46a6-bf25-396281099ed3",
@@ -967,14 +959,6 @@
             }
         },
         {
-            "Key": "779d5284-2527-49ce-81b8-2332dec8316c",
-            "Value": {
-                "id": "ad182824-297b-478d-a7ad-f3877114d2f7",
-                "resourcePath": "rooms\\rmSFXRTesting\\rmSFXRTesting.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "78e3996b-7c43-4c93-8a1b-1c5a04db6b68",
             "Value": {
                 "id": "ebf183bb-8c5d-4940-b8ad-d4d091c0a0fc",
@@ -988,14 +972,6 @@
                 "id": "fb34b04e-ff99-4d75-ac43-d041ee2bd975",
                 "resourcePath": "scripts\\demo_timers_init\\demo_timers_init.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "7d09f62a-3cc4-46ca-acfc-eb1372a782b9",
-            "Value": {
-                "id": "db247859-1e25-47de-a313-76a5ce5830a7",
-                "resourcePath": "objects\\GMSFXR_Example\\GMSFXR_Example.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -1123,6 +1099,14 @@
             "Value": {
                 "id": "606f094a-3b83-4b98-88b8-922553e19b6a",
                 "resourcePath": "scripts\\sfxr_set_freq_slide\\sfxr_set_freq_slide.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "8b27730d-b362-4798-b6a3-c73b159b9cce",
+            "Value": {
+                "id": "d8b733ab-1913-4688-87ca-76ac2486ecd6",
+                "resourcePath": "scripts\\demo_viewer_audio_display\\demo_viewer_audio_display.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1960,6 +1944,7 @@
         "3be63cff-c1d2-4a40-abf8-30ccb246bd52",
         "fbbc684b-cb9d-4b13-bcde-cf028f82d503",
         "2eb77235-103f-4a8b-9b19-8b560fb7f1b2",
+        "8b27730d-b362-4798-b6a3-c73b159b9cce",
         "bdad9e5a-cb16-4b92-9534-0f4f4aca8bd9",
         "16836609-d683-417b-9aa8-25ecce112fb5",
         "5ac6bb48-13ee-425a-b7ae-162de321149a",
