@@ -1,2 +1,4 @@
-/// @description sfxr_get_env_sustain_time();
-return global._sfxr_p_env_sustain;
+/// @func sfxr_get_env_sustain_time
+/// @args id
+var sfxr = argument0;
+return sfxr[?"p env sustain"];

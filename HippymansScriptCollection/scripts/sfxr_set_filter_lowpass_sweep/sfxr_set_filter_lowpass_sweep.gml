@@ -1,6 +1,6 @@
-/// @description sfxr_set_filter_lowpass_sweep(value);
-/// @param value
-//value between -1 and 1
-var value = argument0;
+/// @func sfxr_set_filter_lowpass_sweep
+/// @args id,value
+var sfxr = argument0;
+var value = argument1;
 
-global._sfxr_p_lpf_ramp = clamp(value,-1,1);
+sfxr[?"p lpf ramp"] = clamp(value,-1,1);

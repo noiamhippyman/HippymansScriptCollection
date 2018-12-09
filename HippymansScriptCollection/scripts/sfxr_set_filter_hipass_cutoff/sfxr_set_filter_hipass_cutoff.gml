@@ -1,6 +1,6 @@
-/// @description sfxr_set_filter_hipass_cutoff(value);
-/// @param value
-//value between 0 and 1
-var value = argument0;
+/// @func sfxr_set_filter_hipass_cutoff
+/// @args id,value
+var sfxr = argument0;
+var value = argument1;
 
-global._sfxr_p_hpf_freq = clamp(value,0,1);
+sfxr[?"p hpf freq"] = clamp(value,0,1);

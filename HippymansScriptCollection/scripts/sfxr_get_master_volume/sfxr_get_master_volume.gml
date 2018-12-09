@@ -1,2 +1,4 @@
-/// @description sfxr_get_master_volume();
-return global._sfxr_master_vol;
+/// @func sfxr_get_master_volume
+/// @args id
+var sfxr = argument0;
+return sfxr[?"master vol"];

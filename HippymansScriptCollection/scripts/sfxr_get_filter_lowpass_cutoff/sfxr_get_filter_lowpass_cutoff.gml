@@ -1,2 +1,4 @@
-/// @description sfxr_get_filter_lowpass_cutoff();
-return global._sfxr_p_lpf_freq;
+/// @func sfxr_get_filter_lowpass_cutoff
+/// @args id
+var sfxr = argument0;
+return sfxr[?"p lpf freq"];

@@ -1,6 +1,6 @@
-/// @description sfxr_set_env_attack_time(value);
-/// @param value
-//value between 0 and 1
-var value = argument0;
+/// @func sfxr_set_env_attack_time
+/// @args id,value
+var sfxr = argument0;
+var value = argument1;
 
-global._sfxr_p_env_attack = clamp(value,0,1);
+sfxr[?"p env attack"] = clamp(value,0,1);

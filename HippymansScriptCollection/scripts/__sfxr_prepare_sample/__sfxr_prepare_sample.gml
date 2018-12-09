@@ -1,3 +1,5 @@
-/// @description __sfxr_prepare_sample();
-__sfxr_reset_sample(false);
-global._sfxr_playing_sample = true;
+/// @func __sfxr_prepare_sample
+/// @args id
+var sfxr = argument0;
+__sfxr_reset_sample(sfxr,false);
+sfxr[?"playing sample"] = true;

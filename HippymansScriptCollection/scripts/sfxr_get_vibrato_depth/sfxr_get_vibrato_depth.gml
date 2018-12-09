@@ -1,2 +1,4 @@
-/// @description sfxr_get_vibrato_depth();
-return global._sfxr_p_vib_strength;
+/// @func sfxr_get_vibrato_depth
+/// @args id
+var sfxr = argument0;
+return sfxr[?"p vib strength"];

@@ -1,6 +1,6 @@
-/// @description sfxr_set_change_amount(value);
-/// @param value
-//value between -1 and 1
-var value = argument0;
+/// @func sfxr_set_change_amount
+/// @args id,value
+var sfxr = argument0;
+var value = argument1;
 
-global._sfxr_p_arp_mod = clamp(value,-1,1);
+sfxr[?"p arp mod"] = clamp(value,-1,1);

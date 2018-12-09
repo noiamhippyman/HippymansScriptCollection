@@ -1,6 +1,6 @@
-/// @description sfxr_set_filter_lowpass_resonance(value);
-/// @param value
-//value between 0 and 1
-var value = argument0;
+/// @func sfxr_set_filter_lowpass_resonance
+/// @args id,value
+var sfxr = argument0;
+var value = argument1;
 
-global._sfxr_p_lpf_resonance = clamp(value,0,1);
+sfxr[?"p lpf resonance"] = clamp(value,0,1);

@@ -1,0 +1,1 @@
+demoDataMap[?"sfxr"] = sfxr_init();

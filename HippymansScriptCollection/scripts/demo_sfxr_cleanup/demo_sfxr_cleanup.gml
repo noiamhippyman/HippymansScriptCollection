@@ -1,0 +1,1 @@
+sfxr_free(demoDataMap[?"sfxr"]);

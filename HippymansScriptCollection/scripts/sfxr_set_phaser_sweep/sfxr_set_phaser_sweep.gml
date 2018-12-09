@@ -1,6 +1,6 @@
-/// @description sfxr_set_phaser_sweep(value);
-/// @param value
-//value between -1 and 1
-var value = argument0;
+/// @func sfxr_set_phaser_sweep
+/// @args id,value
+var sfxr = argument0;
+var value = argument1;
 
-global._sfxr_p_pha_ramp = clamp(value,-1,1);
+sfxr[?"p pha ramp"] = clamp(value,-1,1);

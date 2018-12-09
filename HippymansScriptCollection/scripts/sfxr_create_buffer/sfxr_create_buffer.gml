@@ -1,159 +1,165 @@
-/// @description sfxr_create_buffer();
+/// @func sfxr_create_buffer
+/// @args id
+var sfxr = argument0;
 
-__sfxr_prepare_sample();
+__sfxr_prepare_sample(sfxr);
 
 var buffer = buffer_create(2,buffer_grow,2);
 
 //var length = buffer_get_size(buffer);
 buffer_seek(buffer, buffer_seek_start, 0);
 
-while (global._sfxr_playing_sample) {
+while (sfxr[?"playing sample"]) {
     
-    global._sfxr_rep_time++;
-    if (global._sfxr_rep_limit != 0 && global._sfxr_rep_time > global._sfxr_rep_limit) {
-        global._sfxr_rep_time = 0;
-        __sfxr_reset_sample(true);
+    sfxr[?"rep time"]++;
+    if (sfxr[?"rep limit"] != 0 && sfxr[?"rep time"] > sfxr[?"rep limit"]) {
+        sfxr[?"rep time"] = 0;
+        __sfxr_reset_sample(sfxr,true);
     }
     
     //frequency envelopes/arpeggios
-    global._sfxr_arp_time++;
-    if (global._sfxr_arp_limit != 0 && global._sfxr_arp_time >= global._sfxr_arp_limit) {
-        global._sfxr_arp_limit = 0;
-        global._sfxr_fperiod *= global._sfxr_arp_mod;
+    sfxr[?"arp time"]++;
+    if (sfxr[?"arp limit"] != 0 && sfxr[?"arp time"] >= sfxr[?"arp limit"]) {
+        sfxr[?"arp limit"] = 0;
+        sfxr[?"fperiod"] *= sfxr[?"arp mod"];
     }
     
-    global._sfxr_fslide += global._sfxr_fdslide;
-    global._sfxr_fperiod *= global._sfxr_fslide;
+    sfxr[?"fslide"] += sfxr[?"fdslide"];
+    sfxr[?"fperiod"] *= sfxr[?"fslide"];
     
-    if (global._sfxr_fperiod > global._sfxr_fmaxperiod) {
-        global._sfxr_fperiod = global._sfxr_fmaxperiod;
-        if (global._sfxr_p_freq_limit > 0) {
-            global._sfxr_playing_sample = false;
+    if (sfxr[?"fperiod"] > sfxr[?"fmaxperiod"]) {
+        sfxr[?"fperiod"] = sfxr[?"fmaxperiod"];
+        if (sfxr[?"p freq limit"] > 0) {
+            sfxr[?"playing sample"] = false;
         }
     }
     
-    var rfperiod = global._sfxr_fperiod;
+    var rfperiod = sfxr[?"fperiod"];
     
-    if (global._sfxr_vib_amp > 0) {
-        global._sfxr_vib_phase += global._sfxr_vib_speed;
-        rfperiod = global._sfxr_fperiod * (1 + sin(global._sfxr_vib_phase) * global._sfxr_vib_amp);
+    if (sfxr[?"vib amp"] > 0) {
+        sfxr[?"vib phase"] += sfxr[?"vib speed"];
+        rfperiod = sfxr[?"fperiod"] * (1 + sin(sfxr[?"vib phase"]) * sfxr[?"vib amp"]);
     }
     
-    global._sfxr_period = round(rfperiod);
-    if (global._sfxr_period < 8) global._sfxr_period = 8;
-    global._sfxr_square_duty += global._sfxr_square_slide;
-    if (global._sfxr_square_duty < 0) global._sfxr_square_duty = 0;
-    if (global._sfxr_square_duty > 0.5) global._sfxr_square_duty = 0.5;
+    sfxr[?"period"] = round(rfperiod);
+    if (sfxr[?"period"] < 8) sfxr[?"period"] = 8;
+    sfxr[?"square duty"] += sfxr[?"square slide"];
+    if (sfxr[?"square duty"] < 0) sfxr[?"square duty"] = 0;
+    if (sfxr[?"square duty"] > 0.5) sfxr[?"square duty"] = 0.5;
     
     //Volume envelope
-    global._sfxr_env_time++;
-    if (global._sfxr_env_time > global._sfxr_env_length[global._sfxr_env_stage]) {
-        global._sfxr_env_time = 0;
-        global._sfxr_env_stage++;
-        if (global._sfxr_env_stage == 3) {
-            global._sfxr_playing_sample = false;
+	var envLength = sfxr[?"env length"];
+    sfxr[?"env time"]++;
+    if (sfxr[?"env time"] > envLength[sfxr[?"env stage"]]) {
+        sfxr[?"env time"] = 0;
+        sfxr[?"env stage"]++;
+        if (sfxr[?"env stage"] == 3) {
+            sfxr[?"playing sample"] = false;
         }
     }
     
-    switch (global._sfxr_env_stage) {
+    switch (sfxr[?"env stage"]) {
         case 0:
-            global._sfxr_env_vol = global._sfxr_env_time / global._sfxr_env_length[0];
+            sfxr[?"env vol"] = sfxr[?"env time"] / envLength[0];
         break;
         
         case 1:
-            global._sfxr_env_vol = 1 + power(1 - global._sfxr_env_time / global._sfxr_env_length[1], 1) * 2 * global._sfxr_p_env_punch;
+            sfxr[?"env vol"] = 1 + power(1 - sfxr[?"env time"] / envLength[1], 1) * 2 * sfxr[?"p env punch"];
         break;
         
         case 2:
-            global._sfxr_env_vol = 1 - global._sfxr_env_time / global._sfxr_env_length[2];
+            sfxr[?"env vol"] = 1 - sfxr[?"env time"] / envLength[2];
         break;
     }
     
     //Phaser step
-    global._sfxr_fphase += global._sfxr_fdphase;
-    global._sfxr_iphase = abs(round(global._sfxr_fphase));
-    if (global._sfxr_iphase > 1023) {
-        global._sfxr_iphase = 1023;
+    sfxr[?"fphase"] += sfxr[?"fdphase"];
+    sfxr[?"iphase"] = abs(round(sfxr[?"fphase"]));
+    if (sfxr[?"iphase"] > 1023) {
+        sfxr[?"iphase"] = 1023;
     }
     
-    if (global._sfxr_flthp_d != 0) {
-        global._sfxr_flthp *= global._sfxr_flthp_d;
+    if (sfxr[?"flthp d"] != 0) {
+        sfxr[?"flthp"] *= sfxr[?"flthp d"];
 
-		if (global._sfxr_flthp < 0.00001) {
-		    global._sfxr_flthp = 0.00001;
+		if (sfxr[?"flthp"] < 0.00001) {
+		    sfxr[?"flthp"] = 0.00001;
 		}
 		
-		if (global._sfxr_flthp > 0.1) {
-		    global._sfxr_flthp = 0.1;
+		if (sfxr[?"flthp"] > 0.1) {
+		    sfxr[?"flthp"] = 0.1;
 		}
     }
     
     var ssample = 0.8;
     for (var si = 0; si < 8; ++si) {//8x supersampling
         var sample = 0;
-        global._sfxr_phase++;
-        if (global._sfxr_phase >= global._sfxr_period) {
-            global._sfxr_phase = global._sfxr_phase % global._sfxr_period;
-            if (global._sfxr_wave_type == 3) {
+        sfxr[?"phase"]++;
+        if (sfxr[?"phase"] >= sfxr[?"period"]) {
+            sfxr[?"phase"] = sfxr[?"phase"] % sfxr[?"period"];
+            if (sfxr[?"wave type"] == 3) {
                 for (var j = 0; j < 32; ++j) {
-                    global._sfxr_noise_buffer[j] = __sfxr_util_frnd(2) - 1;
+					var noiseBuffer = sfxr[?"noise buffer"];
+                    noiseBuffer[@j] = __sfxr_util_frnd(2) - 1;
                 }
             }
         }
         
         //base waveform
-        var fp = global._sfxr_phase / global._sfxr_period;
-        switch (global._sfxr_wave_type) {
-            case ESfxrWave.Square://square
-                if (fp < global._sfxr_square_duty) {
+        var fp = sfxr[?"phase"] / sfxr[?"period"];
+        switch (sfxr[?"wave type"]) {
+            case enSfxrWave.Square://square
+                if (fp < sfxr[?"square duty"]) {
                     sample = 0.5;
                 } else {
                     sample = -0.5;
                 }
             break;
             
-            case ESfxrWave.Sawtooth://sawtooth
+            case enSfxrWave.Sawtooth://sawtooth
                 sample = 1 - fp * 2;
             break;
             
-            case ESfxrWave.Sine://sine
+            case enSfxrWave.Sine://sine
                 sample = sin(fp * 2 * pi);
             break;
             
-            case ESfxrWave.Noise://noise
-                sample = global._sfxr_noise_buffer[global._sfxr_phase * 32 / global._sfxr_period];
+            case enSfxrWave.Noise://noise
+				var noiseBuffer = sfxr[?"noise buffer"];
+                sample = noiseBuffer[sfxr[?"phase"] * 32 / sfxr[?"period"]];
             break;
         }
         
         //lp filter
-        var pp = global._sfxr_fltp;
-        global._sfxr_fltw = clamp(global._sfxr_fltw * global._sfxr_fltw_d, 0, 0.1);
-        if (global._sfxr_p_lpf_freq != 1) {
-            global._sfxr_fltdp += (sample - global._sfxr_fltp) * global._sfxr_fltw;
-            global._sfxr_fltdp -= global._sfxr_fltdp * global._sfxr_fltdmp;
+        var pp = sfxr[?"fltp"];
+        sfxr[?"fltw"] = clamp(sfxr[?"fltw"] * sfxr[?"fltw d"], 0, 0.1);
+        if (sfxr[?"p lpf freq"] != 1) {
+            sfxr[?"fltdp"] += (sample - sfxr[?"fltp"]) * sfxr[?"fltw"];
+            sfxr[?"fltdp"] -= sfxr[?"fltdp"] * sfxr[?"fltdmp"];
         } else {
-            global._sfxr_fltp = sample;
-            global._sfxr_fltdp = 0;
+            sfxr[?"fltp"] = sample;
+            sfxr[?"fltdp"] = 0;
         }
-        global._sfxr_fltp += global._sfxr_fltdp;
+        sfxr[?"fltp"] += sfxr[?"fltdp"];
         
         //hp filter
-        global._sfxr_fltphp += global._sfxr_fltp - pp;
-        global._sfxr_fltphp -= global._sfxr_fltphp * global._sfxr_flthp;
-        sample = global._sfxr_fltphp;
+        sfxr[?"fltphp"] += sfxr[?"fltp"] - pp;
+        sfxr[?"fltphp"] -= sfxr[?"fltphp"] * sfxr[?"flthp"];
+        sample = sfxr[?"fltphp"];
         
         //phaser
-        global._sfxr_phaser_buffer[global._sfxr_ipp&1023] = sample;
-        sample += global._sfxr_phaser_buffer[(global._sfxr_ipp-global._sfxr_iphase+1024)&1023];
-        global._sfxr_ipp = (global._sfxr_ipp + 1)&1023;
+		var phaserBuffer = sfxr[?"phaser buffer"];
+        phaserBuffer[@(sfxr[?"ipp"]&1023)] = sample;
+        sample += phaserBuffer[@((sfxr[?"ipp"]-sfxr[?"iphase"]+1024)&1023)];
+        sfxr[?"ipp"] = (sfxr[?"ipp"] + 1)&1023;
         
         //final accumulation and envelope application
-        ssample += sample * global._sfxr_env_vol;
+        ssample += sample * sfxr[?"env vol"];
     }
     
-    ssample = ssample / 8 * global._sfxr_master_vol;
+    ssample = ssample / 8 * sfxr[?"master vol"];
     
-    ssample *= 2 * global._sfxr_sound_vol;
+    ssample *= 2 * sfxr[?"sound vol"];
     
     ssample = clamp(ssample,-1,1);
     

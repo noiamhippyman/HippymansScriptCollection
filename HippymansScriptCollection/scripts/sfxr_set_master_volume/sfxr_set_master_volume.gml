@@ -1,4 +1,5 @@
-/// @description sfxr_set_master_volume(value);
-/// @param value
-var value = argument0;
-global._sfxr_master_vol = clamp(value,0,1);
+/// @func sfxr_set_master_volume
+/// @args id,value
+var sfxr = argument0;
+var value = argument1;
+sfxr[?"master vol"] = clamp(value,0,1);

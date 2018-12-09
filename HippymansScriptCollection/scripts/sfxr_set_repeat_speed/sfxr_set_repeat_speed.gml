@@ -1,6 +1,6 @@
-/// @description sfxr_set_repeat_speed(value);
-/// @param value
-//value between 0 and 1
-var value = argument0;
+/// @func sfxr_set_repeat_speed
+/// @args id,value
+var sfxr = argument0;
+var value = argument1;
 
-global._sfxr_p_repeat_speed = clamp(value,0,1);
+sfxr[?"p repeat speed"] = clamp(value,0,1);

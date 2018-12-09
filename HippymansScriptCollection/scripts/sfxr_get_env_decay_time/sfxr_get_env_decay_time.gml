@@ -1,2 +1,4 @@
-/// @description sfxr_get_env_decay_time();
-return global._sfxr_p_env_decay;
+/// @func sfxr_get_env_decay_time
+/// @args id
+var sfxr = argument0;
+return sfxr[?"p env decay"];

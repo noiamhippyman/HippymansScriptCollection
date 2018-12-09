@@ -1,2 +1,4 @@
-/// @description sfxr_get_vibrato_delay();
-return global._sfxr_p_vib_delay;
+/// @func sfxr_get_vibrato_delay
+/// @args id
+var sfxr = argument0;
+return sfxr[?"p vib delay"];

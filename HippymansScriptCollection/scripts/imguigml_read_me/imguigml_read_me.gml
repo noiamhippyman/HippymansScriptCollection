@@ -1253,7 +1253,7 @@ pop style colors
 ```
 imguigml_push_style_var(_idx, _valOrX, [_y])
 ```   
-push a style var on the param stack
+push a style var on the args stack
 
 ---
 
@@ -3564,7 +3564,7 @@ end drag drop target
 #### `imguigml_payload`   
 | | | 
 | --------------- | -------------------------------------------------------------------------------- |   
-**[_id]**         | {Real} if a first param is passed, it's used as the id   
+**[_id]**         | {Real} if a first args is passed, it's used as the id   
 **_payload_data** | {*} payload data can be anything and is returned with a `imguigml_payload_get()`   
 **returns**: |   {Real} _id to pass to dragdrop functions   
 ```
@@ -5047,10 +5047,10 @@ Gets the light palette that may be used with editor
     * removed `imguigml_set_next_window_content_width()`
     * removed `EImGuiGML_WindowFlags`: `ShowBorders`
   * **API Changes**
-    * `imguigml_drawlist_add_poly` and `imguigml_drawlist_add_convex_poly_filled` no longer accept AA param
+    * `imguigml_drawlist_add_poly` and `imguigml_drawlist_add_convex_poly_filled` no longer accept AA args
     * `imguigml_is_window_focused` now takes `EImGui_FocuseFlags`
   * **ADDED** (from 1.53)
-    * `imguigml_drawlist_set_flags` and `imguigml_drawlist_get_flags` for messing with antialiasing (replacing the param above)
+    * `imguigml_drawlist_set_flags` and `imguigml_drawlist_get_flags` for messing with antialiasing (replacing the args above)
     * `imguigml_drawlist_use_overlay` and `imguigml_drawlist_use_window` allowing use of the new overlay
     * `imguigml_style_colors_light`
     * `imguigml_io_set_cursor_blink` and get.
@@ -5086,7 +5086,7 @@ Gets the light palette that may be used with editor
   * Fixes:
     * Fixed `draw_add_rect_filled`
     * Automatically multiply the normalized pixel percent trimmed from sprites when useing `imguigml_sprite`
-    * `imguigml_button` now accepts 1 param for size
+    * `imguigml_button` now accepts 1 args for size
     * Fix `imguigml_color_convert_` gml / u32 functions being backwards
      
 * **v1.1.3: Extras!**
@@ -5101,9 +5101,9 @@ Gets the light palette that may be used with editor
       * Fixed `imguigml_checkbox_flags` to now return an array: `[_changed, _val]` where _val is the current true/false of the checbbox. Before it only returned `_changed`
   * Fixes:
     * `imguigml_checkbox` and `imguigml_checkbox_flags` fixes from above
-    * `imguigml_imguigml_color_convert_float4_to_u32` interanlly, param 3/4 were swapped.
+    * `imguigml_imguigml_color_convert_float4_to_u32` interanlly, args 3/4 were swapped.
     * `imguigml_tree_node` was accidentally left unimplemented
-    * Various help / param issues fixed in the completion.
+    * Various help / args issues fixed in the completion.
     * Slightly improved the demo.
 
 * **v1.0.0: Public Release!!!**
@@ -5119,7 +5119,7 @@ Gets the light palette that may be used with editor
   *  Added: `imguigml_activate` `imguigml_deactivate` and `imguigml_ready` helpers
 
 * **v0.2.0:** First "private" release
-  * **v0.2.1:** Hot Fix: Fixed: `imguigml_plot_histogram` _overlay param
+  * **v0.2.1:** Hot Fix: Fixed: `imguigml_plot_histogram` _overlay args
   * **v0.2.3:** Hot Fix: BeginChild/EndChild weren't implemented, removed IM_ASSERT from the DLL
   * **v0.2.4:** HotFix 
     *  Fixed: `set_column_width` call and input field returns

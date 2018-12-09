@@ -1,5 +1,5 @@
 ///@function rousr_ds_definitions()
-///@description enums / macros for rousr buffer functions (no need to call)
+///@func enums / macros for rousr buffer functions (no need to call)
 ///@extensionizer { "export": false, "docs": false }
 #region rousr array definition
 

@@ -14,7 +14,8 @@
         "69462088-316f-4e7d-8efe-1c8aa6e7addc",
         "cc9a361a-3e77-4d7b-a009-4394da07b055",
         "b350dd8a-9e05-4b7b-a50e-2eb7a3904777",
-        "34739323-d51f-4450-bce2-e7f53c50c87d"
+        "34739323-d51f-4450-bce2-e7f53c50c87d",
+        "4ce93ff6-6076-4090-b2c0-9d5844a065a3"
     ],
     "filterType": "GMScript",
     "folderName": "GMSFXR",

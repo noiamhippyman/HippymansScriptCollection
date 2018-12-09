@@ -1,2 +1,4 @@
-/// @description sfxr_get_filter_lowpass_sweep();
-return global._sfxr_p_lpf_ramp;
+/// @func sfxr_get_filter_lowpass_sweep
+/// @args id
+var sfxr = argument0;
+return sfxr[?"p lpf ramp"];

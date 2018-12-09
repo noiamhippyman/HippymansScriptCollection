@@ -1,7 +1,5 @@
-/// @description  @description __sfxr_remap_level_signed_16_bit(value);
-/// @param value
-/// @function __sfxr_remap_level_signed_16_bit
-/// @param value
+/// @func __sfxr_remap_level_signed_16_bit
+/// @args value
 var value = clamp(argument0,-1,1);
 value++;
 value *= 0.5;

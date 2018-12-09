@@ -1,2 +1,4 @@
-/// @description sfxr_get_phaser_offset();
-return global._sfxr_p_pha_offset;
+/// @func sfxr_get_phaser_offset
+/// @args id
+var sfxr = argument0;
+return sfxr[?"p pha offset"];

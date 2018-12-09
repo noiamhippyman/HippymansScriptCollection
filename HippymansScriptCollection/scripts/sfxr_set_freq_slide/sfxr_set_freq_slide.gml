@@ -1,6 +1,6 @@
-/// @description sfxr_set_freq_slide(value);
-/// @param value
-//value between -1 and 1
-var value = argument0;
+/// @func sfxr_set_freq_slide
+/// @args id,value
+var sfxr = argument0;
+var value = argument1;
 
-global._sfxr_p_freq_ramp = clamp(value,-1,1);
+sfxr[?"p freq ramp"] = clamp(value,-1,1);

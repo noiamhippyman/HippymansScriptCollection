@@ -1,4 +1,5 @@
-/// @description sfxr_set_wave_type(ESfxWave);
-/// @param ESfxWave
-var type = argument0;
-global._sfxr_wave_type = type;
+/// @func sfxr_set_wave_type
+/// @args id,type
+var sfxr = argument0;
+var type = argument1;
+sfxr[?"wave type"] = type;

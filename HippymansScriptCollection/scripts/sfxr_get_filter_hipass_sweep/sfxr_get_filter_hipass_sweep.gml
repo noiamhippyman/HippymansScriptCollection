@@ -1,2 +1,4 @@
-/// @description sfxr_get_filter_hipass_sweep();
-return global._sfxr_p_hpf_ramp;
+/// @func sfxr_get_filter_hipass_sweep
+/// @args id
+var sfxr = argument0;
+return sfxr[?"p hpf ramp"];

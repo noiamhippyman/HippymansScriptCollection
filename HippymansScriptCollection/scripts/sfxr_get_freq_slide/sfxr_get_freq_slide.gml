@@ -1,2 +1,4 @@
-/// @description sfxr_get_freq_slide();
-return global._sfxr_p_freq_ramp;
+/// @func sfxr_get_freq_slide
+/// @args id
+var sfxr = argument0;
+return sfxr[?"p freq ramp"];

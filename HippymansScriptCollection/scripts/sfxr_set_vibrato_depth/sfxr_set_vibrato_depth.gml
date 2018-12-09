@@ -1,6 +1,6 @@
-/// @description sfxr_set_vibrato_depth(value);
-/// @param value
-//value between 0 and 1
-var value = argument0;
+/// @func sfxr_set_vibrato_depth
+/// @args id,value
+var sfxr = argument0;
+var value = argument1;
 
-global._sfxr_p_vib_strength = clamp(value,0,1);
+sfxr[?"p vib strength"] = clamp(value,0,1);

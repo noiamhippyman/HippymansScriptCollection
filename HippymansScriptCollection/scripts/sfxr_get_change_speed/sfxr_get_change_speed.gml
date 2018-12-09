@@ -1,2 +1,4 @@
-/// @description sfxr_get_change_speed();
-return global._sfxr_p_arp_speed;
+/// @func sfxr_get_change_speed
+/// @args id
+var sfxr = argument0;
+return sfxr[?"p arp speed"];
