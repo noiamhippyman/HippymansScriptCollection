@@ -46,12 +46,12 @@ imguigml_separator();
 #endregion
 
 #region Demo Functions and Display
-
+imguigml_begin_child("##displaytimers",0,0,true);
 var timerList = demoDataMap[?"timer list"];
 var timerCount = ds_list_size(timerList);
 
-var buttonCount = 6;
-var buttonW = (demoDataMap[?"window width"]/buttonCount)-4;
+var buttonCount = 7;
+var buttonW = (demoDataMap[?"window width"] - 4 * buttonCount) / buttonCount;
 
 for (var i = 0; i < timerCount; ++i) {
 	imguigml_separator();
@@ -99,5 +99,5 @@ for (var i = 0; i < timerCount; ++i) {
 	
 	imguigml_separator();
 }
-
+imguigml_end_child();
 #endregion

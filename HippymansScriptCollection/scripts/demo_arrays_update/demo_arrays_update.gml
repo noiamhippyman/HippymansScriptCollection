@@ -55,7 +55,7 @@ imguigml_separator();
 #endregion
 
 #region Display Array
-
-imguigml_text_wrapped("Array: " + string(demoDataMap[?"array"]));
-
+imguigml_begin_child("##displayarray",0,0,true);
+imguigml_text_wrapped("Array: " + array_string(demoDataMap[?"array"]));
+imguigml_end_child();
 #endregion

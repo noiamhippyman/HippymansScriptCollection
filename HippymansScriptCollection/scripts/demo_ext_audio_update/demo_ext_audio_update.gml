@@ -37,7 +37,7 @@ imguigml_separator();
 #endregion
 
 #region Demo Display and Functions
-
+imguigml_begin_child("##displayextaudio",0,0,true);
 var audioList = demoDataMap[?"audio list"];
 var audioCount = ds_list_size(audioList);
 for (var i = 0; i < audioCount; ++i) {
@@ -51,6 +51,7 @@ for (var i = 0; i < audioCount; ++i) {
 		ds_list_delete(audioList,i);
 		break;
 	}
+	imguigml_separator();
 }
-
+imguigml_end_child();
 #endregion

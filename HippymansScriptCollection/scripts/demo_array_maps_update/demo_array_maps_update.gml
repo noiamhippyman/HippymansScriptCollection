@@ -33,7 +33,7 @@ if (ret[0]) demoDataMap[?"value"] = ret[1];
 #region Demo Functions
 
 var buttonCount = 6;
-var buttonW = (demoDataMap[?"window width"]/buttonCount) - 4
+var buttonW = (demoDataMap[?"window width"] - 4 * buttonCount) / buttonCount;
 var buttonH = 20;
 
 imguigml_push_style_var(EImGui_StyleVar.ItemSpacing,4,4);
@@ -74,7 +74,7 @@ imguigml_separator();
 #endregion
 
 #region Display Array Map
-
+imguigml_begin_child("##displayarraymap",0,0,true);
 imguigml_columns(2,"Array Map Display",true);
 imguigml_text("Key");
 imguigml_next_column();
@@ -92,5 +92,5 @@ for (var i = 0; i < size; i += 2) {
 	imguigml_next_column();
 	
 }
-
+imguigml_end_child();
 #endregion

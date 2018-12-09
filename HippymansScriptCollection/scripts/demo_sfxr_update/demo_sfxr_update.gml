@@ -215,12 +215,11 @@ imguigml_separator();
 #endregion
 
 #region Demo Display
-
+imguigml_begin_child("##displaysfxr",0,0,true);
 var sfxList = demoDataMap[?"sfx list"];
 var sfxCount = ds_list_size(sfxList);
 for (var i = 0; i < sfxCount; ++i) {
 	var sfx = sfxList[|i];
-	
 	var audioID = sfx[1];
 	
 	demo_viewer_audio_display("SFX","sfxr-audio",i,audioID);
@@ -241,6 +240,9 @@ for (var i = 0; i < sfxCount; ++i) {
 		ds_list_delete(sfxList,i);
 		break;
 	}
+	
+	imguigml_separator();
 }
+imguigml_end_child();
 
 #endregion

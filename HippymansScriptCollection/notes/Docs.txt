@@ -1,4 +1,0 @@
-Categories
-*Arrays
-*Array Maps
-*Numbers

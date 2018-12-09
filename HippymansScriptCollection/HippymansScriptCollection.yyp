@@ -175,14 +175,6 @@
             }
         },
         {
-            "Key": "1c473cd8-4ac1-427d-a4a2-c20678538a20",
-            "Value": {
-                "id": "c85bdc32-5aed-4bb9-88fe-cc292b941fa2",
-                "resourcePath": "datafiles_yy\\GMSFXR\\Saved Presets\\loldie.sfxs.yy",
-                "resourceType": "GMIncludedFile"
-            }
-        },
-        {
             "Key": "1c69fffc-b2d5-4467-81ef-5c2ae9026f68",
             "Value": {
                 "id": "11d134af-eda1-4b6a-a745-d6658920bacb",
@@ -411,14 +403,6 @@
             "Value": {
                 "id": "449e1e30-34e9-4725-b728-c62ed87bb974",
                 "resourcePath": "views\\2fed8494-9918-4113-8c39-f3ca8908d8c7.yy",
-                "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "308ca9e6-1c6c-4534-9075-8c86ade05421",
-            "Value": {
-                "id": "96e1830b-d03d-47d0-9cdb-d038ee54ea09",
-                "resourcePath": "views\\308ca9e6-1c6c-4534-9075-8c86ade05421.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -775,14 +759,6 @@
             }
         },
         {
-            "Key": "6172b70f-9a28-4009-a135-6770ccd41999",
-            "Value": {
-                "id": "e91aa4e9-6a0f-496f-acf6-5d90e889bbce",
-                "resourcePath": "views\\6172b70f-9a28-4009-a135-6770ccd41999.yy",
-                "resourceType": "GMFolder"
-            }
-        },
-        {
             "Key": "631de02c-e241-42bf-9efa-1274ac1152d6",
             "Value": {
                 "id": "1d875ba4-2099-461d-830d-54d28b9ef11d",
@@ -884,14 +860,6 @@
                 "id": "4cb78ef2-8d88-4035-8726-68b611a2b8ef",
                 "resourcePath": "scripts\\sfxr_set_change_amount\\sfxr_set_change_amount.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "6cd7364a-c1ca-457e-85ca-263948997fe4",
-            "Value": {
-                "id": "68e0d2d6-b929-40d9-88dd-0f561e8cb590",
-                "resourcePath": "datafiles_yy\\GMSFXR\\Documentation.pdf.yy",
-                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -1047,14 +1015,6 @@
             }
         },
         {
-            "Key": "81f24e7e-4940-4496-aa0f-55c5cc39e400",
-            "Value": {
-                "id": "ca15b9d5-0e93-49ec-ae5c-a48b8785ca7d",
-                "resourcePath": "notes\\Docs.yy",
-                "resourceType": "GMNotes"
-            }
-        },
-        {
             "Key": "830d1829-8f4d-45e9-a403-776aafb9b8be",
             "Value": {
                 "id": "f21b5a8b-4e50-4d46-a2ab-5f5fa0ac2b76",
@@ -1156,14 +1116,6 @@
                 "id": "b8991a96-6704-4ac2-bb6a-beee41aba1c8",
                 "resourcePath": "views\\91c3d23b-86c3-4b35-96c7-7fbbcc76cab3.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "91cb38cb-1e35-4406-898c-bc30866501e0",
-            "Value": {
-                "id": "e85306e0-9f96-45f7-a734-5fd4743afc35",
-                "resourcePath": "datafiles_yy\\GMSFXR\\Saved Presets\\meow.sfxs.yy",
-                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -1459,6 +1411,14 @@
             "Value": {
                 "id": "7110e0ec-b9d5-4a33-9e43-51b86061283a",
                 "resourcePath": "scripts\\sfxr_set_env_decay_time\\sfxr_set_env_decay_time.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "c1436df4-6db2-42a4-a614-daa706c58f72",
+            "Value": {
+                "id": "768f6315-6c43-462d-b8f8-8cd5cb2ecb23",
+                "resourcePath": "scripts\\array_string\\array_string.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1835,6 +1795,7 @@
         "2eb70d69-c2a6-4873-b2c4-c168488a03d2",
         "f4e57a54-079b-4082-9264-5f94df6ee20d",
         "ccc75132-b74c-4044-b90a-01bf3aef3aed",
+        "c1436df4-6db2-42a4-a614-daa706c58f72",
         "d2becf4e-9655-4de0-a20c-6f7838c570ad",
         "12326b7d-e2af-4a98-b4e6-bd48e84bd4d5",
         "29aae7a6-c4c8-4291-9095-6e2f0b0f95eb",
