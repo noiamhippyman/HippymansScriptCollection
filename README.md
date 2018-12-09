@@ -9,4 +9,6 @@ ___
 - Timers
 ___
 
-Using ImGuiGML for demo GUI. https://marketplace.yoyogames.com/assets/6221/imguigml
+Using [ImGuiGML](https://marketplace.yoyogames.com/assets/6221/imguigml) for demo GUI.
+
+Downloadable demo available on [Google Drive](https://drive.google.com/open?id=14qVxONsIOjIvETFouScy3hHTFqmRrF3O)
