@@ -190,25 +190,25 @@ if (imguigml_button("Generate##sfxr",demoDataMap[?"window width"]-4,buttonH)) {
 	var sfx = [buffer,audioID,settingsMap];
 	ds_list_add(demoDataMap[?"sfx list"],sfx);
 }
-if (imguigml_button("Pickup",buttonW,buttonH)) sfxr_preset_coinpickup(sfxr);
+if (imguigml_button("Pickup##sfxrpreset",buttonW,buttonH)) sfxr_preset_coinpickup(sfxr);
 imguigml_same_line();
-if (imguigml_button("Shoot",buttonW,buttonH)) sfxr_preset_lasershoot(sfxr);
+if (imguigml_button("Shoot##sfxrpreset",buttonW,buttonH)) sfxr_preset_lasershoot(sfxr);
 imguigml_same_line();
-if (imguigml_button("Boom",buttonW,buttonH)) sfxr_preset_explosion(sfxr);
+if (imguigml_button("Boom##sfxrpreset",buttonW,buttonH)) sfxr_preset_explosion(sfxr);
 imguigml_same_line();
-if (imguigml_button("Powerup",buttonW,buttonH)) sfxr_preset_powerup(sfxr);
+if (imguigml_button("Powerup##sfxrpreset",buttonW,buttonH)) sfxr_preset_powerup(sfxr);
 imguigml_same_line();
-if (imguigml_button("Hit",buttonW,buttonH)) sfxr_preset_hithurt(sfxr);
+if (imguigml_button("Hit##sfxrpreset",buttonW,buttonH)) sfxr_preset_hithurt(sfxr);
 imguigml_same_line();
-if (imguigml_button("Jump",buttonW,buttonH)) sfxr_preset_jump(sfxr);
+if (imguigml_button("Jump##sfxrpreset",buttonW,buttonH)) sfxr_preset_jump(sfxr);
 imguigml_same_line();
-if (imguigml_button("Blip",buttonW,buttonH)) sfxr_preset_blipselect(sfxr);
+if (imguigml_button("Blip##sfxrpreset",buttonW,buttonH)) sfxr_preset_blipselect(sfxr);
 imguigml_same_line();
-if (imguigml_button("Mutate",buttonW,buttonH)) sfxr_preset_mutate(sfxr);
+if (imguigml_button("Mutate##sfxrpreset",buttonW,buttonH)) sfxr_preset_mutate(sfxr);
 imguigml_same_line();
-if (imguigml_button("Random",buttonW,buttonH)) sfxr_preset_randomize(sfxr);
+if (imguigml_button("Random##sfxrpreset",buttonW,buttonH)) sfxr_preset_randomize(sfxr);
 imguigml_same_line();
-if (imguigml_button("Reset",buttonW,buttonH)) sfxr_reset(sfxr);
+if (imguigml_button("Reset##sfxrpreset",buttonW,buttonH)) sfxr_reset(sfxr);
 
 imguigml_pop_style_var(1);
 imguigml_separator();
